@@ -1,12 +1,17 @@
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import pandas as pd
-import os
+import pickle
 
 
-target = pd.read_csv(os.path.join('test', 'target_test.csv'))
-predict = pd.read_csv(os.path.join('test', 'predict.csv'))
+model = pickle.load(open('model.pkl', 'rb'))
+df_test = pd.read_csv('./test/result_test.csv')
+X_test = df_test.drop("target", axis=1)
+y_test = df_test["target"]
 
-print(f"MAE - {mean_absolute_error(target, predict)}")
-print(f"MSE - {mean_squared_error(target, predict)}")
-print(f"RMSE - {mean_squared_error(target, predict)**0.5}")
-print(f"r2 - {r2_score(target, predict, multioutput='variance_weighted')}")
+predict = pd.DataFrame(model.predict(X_test))
+
+
+print(f"MAE - {mean_absolute_error(y_test, predict)}")
+print(f"MSE - {mean_squared_error(y_test, predict)}")
+print(f"RMSE - {mean_squared_error(y_test, predict)**0.5}")
+print(f"r2 - {r2_score(y_test, predict, multioutput='variance_weighted')}")
