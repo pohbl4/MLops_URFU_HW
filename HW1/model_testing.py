@@ -10,8 +10,8 @@ y_test = df_test["target"]
 
 predict = pd.DataFrame(model.predict(X_test))
 
-
-print(f"MAE - {mean_absolute_error(y_test, predict)}")
-print(f"MSE - {mean_squared_error(y_test, predict)}")
-print(f"RMSE - {mean_squared_error(y_test, predict)**0.5}")
-print(f"r2 - {r2_score(y_test, predict, multioutput='variance_weighted')}")
+print("--- Metrics:")
+print(f"--- MAE - {mean_absolute_error(y_test, predict)}")
+print(f"--- MSE - {mean_squared_error(y_test, predict)}")
+print(f"--- RMSE - {mean_squared_error(y_test, predict)**0.5}")
+print(f"--- r2 - {r2_score(y_test, predict, multioutput='variance_weighted')}")
