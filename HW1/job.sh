@@ -1,7 +1,7 @@
-python ./mlops-demo/data_creation.py
-python ./mlops-demo/model_preprocessing.py
-python ./mlops-demo/model_preparation.py
-python ./mlops-demo/model_testing.py
+python3 ./mlops-demo/data_creation.py
+python3 ./mlops-demo/model_preprocessing.py
+python3 ./mlops-demo/model_preparation.py
+python3 ./mlops-demo/model_testing.py
 
 # optional
-python ./mlops-demo/cleaner.py
+python3 ./mlops-demo/cleaner.py
