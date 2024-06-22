@@ -1,7 +1,7 @@
-#!/bin/sh
-python ./data_creation.py
-python ./model_preprocessing.py
-python ./model_preparation.py
-python ./model_testing.py
+python ./mlops-demo/data_creation.py
+python ./mlops-demo/model_preprocessing.py
+python ./mlops-demo/model_preparation.py
+python ./mlops-demo/model_testing.py
 
-python ./cleaner.py
+# optional
+python ./mlops-demo/cleaner.py
